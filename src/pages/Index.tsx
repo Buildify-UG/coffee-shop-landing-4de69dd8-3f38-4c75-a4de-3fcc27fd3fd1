@@ -1,4 +1,4 @@
-import { Coffee, Clock, MapPin, Phone, Mail, Heart, Facebook, Instagram, Twitter, Moon, Sun } from 'lucide-react';
+import { Coffee, Clock, MapPin, Phone, Mail, Heart, Facebook, Instagram, Twitter, Moon, Sun, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function CoffeeShop() {
@@ -25,6 +25,12 @@ export default function CoffeeShop() {
     { day: 'Monday - Friday', time: '6:00 AM - 8:00 PM' },
     { day: 'Saturday', time: '7:00 AM - 9:00 PM' },
     { day: 'Sunday', time: '8:00 AM - 7:00 PM' },
+  ];
+
+  const testimonials = [
+    { name: 'Sarah Johnson', text: 'Best coffee in the city! The atmosphere is cozy and the baristas are so friendly.' },
+    { name: 'Michael Chen', text: 'I come here every morning. Their cappuccino is perfection, and the pastries are always fresh.' },
+    { name: 'Emma Williams', text: 'Brew Haven is my favorite spot to work. Great WiFi, excellent coffee, and wonderful people!' },
   ];
 
   return (
@@ -131,6 +137,29 @@ export default function CoffeeShop() {
               <h3 className="font-semibold text-primary mb-2">Email</h3>
               <p className="text-foreground">hello@brewhaven.com</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 bg-secondary">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">What Our Customers Say</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={idx}
+                className="bg-card border border-border rounded-lg p-8 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-6 italic">"{testimonial.text}"</p>
+                <p className="font-semibold text-primary">— {testimonial.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
