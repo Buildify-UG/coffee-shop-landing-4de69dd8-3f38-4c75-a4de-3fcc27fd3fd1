@@ -1,4 +1,4 @@
-import { Coffee, Clock, MapPin, Phone, Mail, Heart } from 'lucide-react';
+import { Coffee, Clock, MapPin, Phone, Mail, Heart, Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function CoffeeShop() {
   const menuItems = [
@@ -118,11 +118,27 @@ export default function CoffeeShop() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-900 text-amber-50 py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center flex items-center justify-center gap-2">
-          <p>Made with</p>
-          <Heart className="w-4 h-4 fill-current" />
-          <p>at Brew Haven © 2024</p>
+      <footer className="bg-amber-900 text-amber-50 py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mb-8">
+            <a href="https://facebook.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200 transition">
+              <Facebook className="w-6 h-6" />
+            </a>
+            <a href="https://instagram.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200 transition">
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a href="https://twitter.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200 transition">
+              <Twitter className="w-6 h-6" />
+            </a>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center flex items-center justify-center gap-2">
+            <p>Made with</p>
+            <Heart className="w-4 h-4 fill-current" />
+            <p>at Brew Haven © 2024</p>
+          </div>
         </div>
       </footer>
     </div>
