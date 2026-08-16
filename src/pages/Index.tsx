@@ -58,7 +58,7 @@ export default function CoffeeShop() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         <div 
           className="absolute inset-0"
           style={{
@@ -71,8 +71,8 @@ export default function CoffeeShop() {
         </div>
         <div className="relative h-full flex items-center justify-center text-center text-white">
           <div>
-            <h2 className="text-5xl font-bold mb-4">Welcome to Brew Haven</h2>
-            <p className="text-xl text-amber-100">Crafted coffee, warm atmosphere, perfect moments</p>
+            <h2 className="text-7xl md:text-8xl font-bold mb-6 text-center">Welcome to Brew Haven</h2>
+            <p className="text-2xl md:text-3xl text-primary">Crafted coffee, warm atmosphere, perfect moments</p>
           </div>
         </div>
       </section>
