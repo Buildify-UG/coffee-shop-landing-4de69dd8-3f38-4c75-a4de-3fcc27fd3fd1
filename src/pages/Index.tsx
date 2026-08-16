@@ -28,24 +28,24 @@ export default function CoffeeShop() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-amber-200 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
+      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur-sm z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Coffee className="w-8 h-8 text-amber-700" />
-            <h1 className="text-2xl font-bold text-amber-900">Brew Haven</h1>
+            <Coffee className="w-8 h-8 text-primary" />
+            <h1 className="text-2xl font-bold text-primary">Brew Haven</h1>
           </div>
           <nav className="hidden md:flex gap-8 items-center">
-            <a href="#menu" className="text-foreground hover:text-amber-700 transition">Menu</a>
-            <a href="#hours" className="text-foreground hover:text-amber-700 transition">Hours</a>
-            <a href="#contact" className="text-foreground hover:text-amber-700 transition">Contact</a>
+            <a href="#menu" className="text-foreground hover:text-primary transition">Menu</a>
+            <a href="#hours" className="text-foreground hover:text-primary transition">Hours</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition">Contact</a>
             <button
               onClick={() => setIsDark(!isDark)}
               className="p-2 rounded-lg bg-muted hover:bg-primary/10 transition"
               aria-label="Toggle dark mode"
             >
-              {isDark ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-foreground" />}
+              {isDark ? <Sun className="w-5 h-5 text-primary" /> : <Moon className="w-5 h-5 text-foreground" />}
             </button>
           </nav>
         </div>
@@ -74,16 +74,16 @@ export default function CoffeeShop() {
       {/* Menu Section */}
       <section id="menu" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-amber-900">Our Menu</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">Our Menu</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {menuItems.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-amber-200 rounded-lg p-6 hover:shadow-lg hover:border-amber-400 transition-all"
+                className="bg-card border border-border rounded-lg p-6 hover:shadow-lg hover:border-primary transition-all"
               >
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg font-bold text-amber-900">{item.name}</h3>
-                  <span className="text-amber-700 font-semibold">{item.price}</span>
+                  <h3 className="text-lg font-bold text-primary">{item.name}</h3>
+                  <span className="text-primary font-semibold">{item.price}</span>
                 </div>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
@@ -93,17 +93,17 @@ export default function CoffeeShop() {
       </section>
 
       {/* Hours Section */}
-      <section id="hours" className="py-16 px-4 bg-amber-50">
+      <section id="hours" className="py-16 px-4 bg-secondary">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-amber-900">Hours of Operation</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">Hours of Operation</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {hours.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-lg p-8 text-center border border-amber-200"
+                className="bg-card rounded-lg p-8 text-center border border-border"
               >
-                <Clock className="w-8 h-8 text-amber-700 mx-auto mb-4" />
-                <p className="font-semibold text-amber-900 mb-2">{item.day}</p>
+                <Clock className="w-8 h-8 text-primary mx-auto mb-4" />
+                <p className="font-semibold text-primary mb-2">{item.day}</p>
                 <p className="text-foreground">{item.time}</p>
               </div>
             ))}
@@ -114,21 +114,21 @@ export default function CoffeeShop() {
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-amber-900">Get In Touch</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">Get In Touch</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border border-amber-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
-              <MapPin className="w-8 h-8 text-amber-700 mx-auto mb-4" />
-              <h3 className="font-semibold text-amber-900 mb-2">Location</h3>
+            <div className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+              <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
+              <h3 className="font-semibold text-primary mb-2">Location</h3>
               <p className="text-foreground">123 Coffee Lane<br />Brew City, BC 12345</p>
             </div>
-            <div className="bg-white border border-amber-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
-              <Phone className="w-8 h-8 text-amber-700 mx-auto mb-4" />
-              <h3 className="font-semibold text-amber-900 mb-2">Phone</h3>
+            <div className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+              <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
+              <h3 className="font-semibold text-primary mb-2">Phone</h3>
               <p className="text-foreground">(555) 123-4567</p>
             </div>
-            <div className="bg-white border border-amber-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
-              <Mail className="w-8 h-8 text-amber-700 mx-auto mb-4" />
-              <h3 className="font-semibold text-amber-900 mb-2">Email</h3>
+            <div className="bg-card border border-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+              <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
+              <h3 className="font-semibold text-primary mb-2">Email</h3>
               <p className="text-foreground">hello@brewhaven.com</p>
             </div>
           </div>
@@ -136,17 +136,17 @@ export default function CoffeeShop() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-900 text-amber-50 py-12 px-4">
+      <footer className="bg-secondary text-foreground py-12 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Social Links */}
           <div className="flex justify-center gap-6 mb-8">
-            <a href="https://facebook.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200 transition">
+            <a href="https://facebook.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
               <Facebook className="w-6 h-6" />
             </a>
-            <a href="https://instagram.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200 transition">
+            <a href="https://instagram.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://twitter.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-amber-200 transition">
+            <a href="https://twitter.com/brewhaven" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
               <Twitter className="w-6 h-6" />
             </a>
           </div>
