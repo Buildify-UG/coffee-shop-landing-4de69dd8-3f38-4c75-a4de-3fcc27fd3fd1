@@ -1,6 +1,17 @@
-import { Coffee, Clock, MapPin, Phone, Mail, Heart, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Coffee, Clock, MapPin, Phone, Mail, Heart, Facebook, Instagram, Twitter, Moon, Sun } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function CoffeeShop() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [isDark]);
   const menuItems = [
     { name: 'Espresso', price: '$3.50', description: 'Rich, bold single shot' },
     { name: 'Cappuccino', price: '$5.00', description: 'Espresso with steamed milk & foam' },
@@ -25,10 +36,17 @@ export default function CoffeeShop() {
             <Coffee className="w-8 h-8 text-amber-700" />
             <h1 className="text-2xl font-bold text-amber-900">Brew Haven</h1>
           </div>
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-8 items-center">
             <a href="#menu" className="text-foreground hover:text-amber-700 transition">Menu</a>
             <a href="#hours" className="text-foreground hover:text-amber-700 transition">Hours</a>
             <a href="#contact" className="text-foreground hover:text-amber-700 transition">Contact</a>
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="p-2 rounded-lg bg-muted hover:bg-primary/10 transition"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-foreground" />}
+            </button>
           </nav>
         </div>
       </header>
